@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <title>Электронный журнал УГГУ</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -13,11 +12,14 @@
   --gold:#c9a84c;--gold2:#e8c96a;--gd:rgba(201,168,76,.13);--gd2:rgba(201,168,76,.06);
   --t1:#e4e6f0;--t2:#9fa3b5;--t3:#5a5e72;
   --red:#e05c5c;--green:#4caf82;--blue:#4c8de0;--purple:#9b6fe0;--orange:#e08c4c;
-  --r:10px;--r2:14px;
+  --r:12px;--r2:16px;
+  --ff-sans:Arial,"Helvetica Neue",Helvetica,sans-serif;
+  --ff-mono:ui-monospace,"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
 }
+
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html,body{height:100%;overflow:hidden;font-size:14px}
-body{background:var(--bg);color:var(--t1);font-family:'IBM Plex Sans',sans-serif}
+body{background:var(--bg);color:var(--t1);font-family:var(--ff-sans);font-weight:600;line-height:1.45}
 #AUTH{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
   background:radial-gradient(ellipse at 20% 20%,rgba(201,168,76,.1) 0%,transparent 50%),
   radial-gradient(ellipse at 80% 80%,rgba(76,141,224,.07) 0%,transparent 50%),var(--bg);
@@ -29,21 +31,21 @@ body{background:var(--bg);color:var(--t1);font-family:'IBM Plex Sans',sans-serif
   border:3px solid var(--gold);box-shadow:0 0 22px rgba(201,168,76,.3);flex-shrink:0}
 .alogo-wrap img{width:100%;height:100%;object-fit:cover}
 .aln{text-align:center}
-.aln .uni{font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:var(--gold);text-transform:uppercase;letter-spacing:.06em}
+.aln .uni{font-family:var(--ff-sans);font-size:20px;font-weight:900;color:var(--gold);text-transform:uppercase;letter-spacing:.06em}
 .aln .sub{font-size:12px;color:var(--t2);margin-top:5px;line-height:1.5}
-.atitle{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;text-align:center;margin-bottom:22px}
+.atitle{font-family:var(--ff-sans);font-size:22px;font-weight:700;text-align:center;margin-bottom:22px}
 .tabs2{display:flex;gap:3px;background:var(--bg);border-radius:9px;padding:3px;margin-bottom:18px}
-.tab2{flex:1;padding:8px;border:none;border-radius:7px;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:600;transition:all .2s;background:transparent;color:var(--t2)}
+.tab2{flex:1;padding:8px;border:none;border-radius:7px;cursor:pointer;font-family:var(--ff-sans);font-size:12px;font-weight:600;transition:all .2s;background:transparent;color:var(--t2)}
 .tab2.on{background:var(--s2);color:var(--gold)}
 .fg{margin-bottom:13px}
 .fl{font-size:10px;font-weight:600;color:var(--t2);margin-bottom:5px;display:block;text-transform:uppercase;letter-spacing:.07em}
-.fi,.fsel{width:100%;padding:11px 13px;background:var(--bg);border:1px solid var(--b2);border-radius:9px;color:var(--t1);font-family:'IBM Plex Sans',sans-serif;font-size:13px;transition:border-color .2s;outline:none}
+.fi,.fsel{width:100%;padding:11px 13px;background:var(--bg);border:1px solid var(--b2);border-radius:9px;color:var(--t1);font-family:var(--ff-sans);font-size:13px;transition:border-color .2s;outline:none}
 .fi:focus,.fsel:focus{border-color:var(--gold)}.fsel option{background:var(--s2)}
 .role-row{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
-.rbtn{flex:1;min-width:80px;padding:9px 5px;border:1.5px solid var(--b2);border-radius:9px;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;font-size:10px;font-weight:600;transition:all .2s;background:transparent;color:var(--t2);text-align:center}
+.rbtn{flex:1;min-width:80px;padding:9px 5px;border:1.5px solid var(--b2);border-radius:9px;cursor:pointer;font-family:var(--ff-sans);font-size:10px;font-weight:600;transition:all .2s;background:transparent;color:var(--t2);text-align:center}
 .rbtn.on{border-color:var(--gold);color:var(--gold);background:var(--gd)}
 .ri{font-size:18px;display:block;margin-bottom:4px}
-.bgold{width:100%;padding:13px;background:linear-gradient(135deg,var(--gold),var(--gold2));border:none;border-radius:9px;font-family:'IBM Plex Sans',sans-serif;font-size:14px;font-weight:700;color:#0d0f14;cursor:pointer;transition:opacity .2s;margin-top:4px}
+.bgold{width:100%;padding:13px;background:linear-gradient(135deg,var(--gold),var(--gold2));border:none;border-radius:9px;font-family:var(--ff-sans);font-size:14px;font-weight:700;color:#0d0f14;cursor:pointer;transition:opacity .2s;margin-top:4px}
 .bgold:hover{opacity:.88}
 .aerr{color:var(--red);font-size:11px;margin-top:9px;text-align:center;min-height:16px}
 .demos{margin-top:14px;text-align:center;font-size:11px;color:var(--t3)}
@@ -52,7 +54,7 @@ body{background:var(--bg);color:var(--t1);font-family:'IBM Plex Sans',sans-serif
 .topbar{display:flex;align-items:center;gap:10px;padding:0 16px;height:54px;background:var(--s1);border-bottom:1px solid var(--b1);flex-shrink:0;z-index:60}
 .topbar-lw{width:32px;height:32px;border-radius:50%;overflow:hidden;border:1.5px solid var(--gold);flex-shrink:0}
 .topbar-lw img{width:100%;height:100%;object-fit:cover}
-.tbname{font-family:'Playfair Display',serif;font-size:14px;font-weight:900;color:var(--gold)}
+.tbname{font-family:var(--ff-sans);font-size:14px;font-weight:900;color:var(--gold)}
 .tbsep{width:1px;height:22px;background:var(--b2)}
 .tblbl{font-size:11px;color:var(--t2);display:none}
 @media(min-width:600px){.tblbl{display:block}}
@@ -62,7 +64,7 @@ body{background:var(--bg);color:var(--t1);font-family:'IBM Plex Sans',sans-serif
 .rpill{font-size:9px;font-weight:700;padding:2px 7px;border-radius:8px;letter-spacing:.04em;text-transform:uppercase}
 .rt{background:rgba(201,168,76,.15);color:var(--gold)}.rs{background:rgba(76,141,224,.15);color:var(--blue)}
 .ra{background:rgba(224,92,92,.15);color:var(--red)}.rp{background:rgba(155,111,224,.15);color:var(--purple)}
-.blg{padding:5px 10px;border:1px solid var(--b2);background:transparent;color:var(--t2);border-radius:7px;cursor:pointer;font-size:11px;font-family:'IBM Plex Sans',sans-serif;transition:all .2s}
+.blg{padding:5px 10px;border:1px solid var(--b2);background:transparent;color:var(--t2);border-radius:7px;cursor:pointer;font-size:11px;font-family:var(--ff-sans);transition:all .2s}
 .blg:hover{border-color:var(--red);color:var(--red)}
 .burger{display:flex;flex-direction:column;gap:4px;padding:6px;cursor:pointer;background:none;border:none;margin-right:4px}
 .burger span{width:18px;height:2px;background:var(--t2);border-radius:1px}
@@ -82,7 +84,7 @@ body{background:var(--bg);color:var(--t1);font-family:'IBM Plex Sans',sans-serif
 .pg{display:none;flex:1;flex-direction:column;min-height:0}.pg.on{display:flex}
 .pgh{padding:20px 20px 0;margin-bottom:14px}
 @media(min-width:600px){.pgh{padding:24px 28px 0}}
-.pht{font-family:'Playfair Display',serif;font-size:22px;font-weight:700}
+.pht{font-family:var(--ff-sans);font-size:22px;font-weight:700}
 @media(min-width:600px){.pht{font-size:26px}}
 .phs{font-size:12px;color:var(--t2);margin-top:4px}
 .pgb{flex:1;overflow-y:auto;padding:0 20px 20px}
@@ -93,7 +95,7 @@ body{background:var(--bg);color:var(--t1);font-family:'IBM Plex Sans',sans-serif
 .card{background:var(--s1);border:1px solid var(--b1);border-radius:var(--r);overflow:hidden;margin-bottom:16px}
 .card-h{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--b1);flex-wrap:wrap;gap:8px}
 .card-t{font-size:13px;font-weight:600}
-.btn{padding:6px 12px;border-radius:7px;font-size:11px;font-family:'IBM Plex Sans',sans-serif;font-weight:600;cursor:pointer;transition:all .18s;border:1px solid var(--b2);background:var(--s2);color:var(--t1)}
+.btn{padding:6px 12px;border-radius:7px;font-size:11px;font-family:var(--ff-sans);font-weight:600;cursor:pointer;transition:all .18s;border:1px solid var(--b2);background:var(--s2);color:var(--t1)}
 .btn:hover{border-color:var(--gold);color:var(--gold)}
 .btn.g{background:var(--gold);border-color:var(--gold);color:#0d0f14}.btn.g:hover{opacity:.85}
 .btn.r{border-color:var(--red);color:var(--red);background:rgba(224,92,92,.08)}
@@ -103,7 +105,7 @@ body{background:var(--bg);color:var(--t1);font-family:'IBM Plex Sans',sans-serif
 @media(min-width:700px){.stats{grid-template-columns:repeat(4,1fr)}}
 .scard{background:var(--s1);border:1px solid var(--b1);border-radius:var(--r);padding:14px 16px}
 .sl{font-size:10px;color:var(--t2);text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}
-.sv{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:500;color:var(--gold)}
+.sv{font-family:var(--ff-mono);font-size:22px;font-weight:500;color:var(--gold)}
 .sd{font-size:11px;color:var(--t3);margin-top:2px}
 .tw{overflow-x:auto;-webkit-overflow-scrolling:touch}
 table{width:100%;border-collapse:collapse}
@@ -113,7 +115,7 @@ td{padding:8px 10px;border-bottom:1px solid rgba(37,40,54,.8);font-size:12px;ver
 tr:last-child td{border-bottom:none}
 tr:hover td{background:rgba(255,255,255,.012)}
 .sn{font-weight:500;white-space:nowrap}.snum{color:var(--t2);font-size:11px;margin-right:4px}
-.sc{text-align:center;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;cursor:pointer;border-radius:6px;width:28px;height:26px;display:flex;align-items:center;justify-content:center;margin:0 auto;transition:all .15s}
+.sc{text-align:center;font-family:var(--ff-mono);font-size:13px;font-weight:700;cursor:pointer;border-radius:6px;width:28px;height:26px;display:flex;align-items:center;justify-content:center;margin:0 auto;transition:all .15s}
 .sc.ed:hover{background:var(--gd);outline:1px solid var(--gold)}
 .s5{color:#4caf82;background:rgba(76,175,130,.12)}.s4{color:#7ec8e3;background:rgba(126,200,227,.1)}
 .s3{color:#e0b04c;background:rgba(224,176,76,.1)}.s2{color:#e07c5c;background:rgba(224,124,92,.1)}
@@ -122,16 +124,16 @@ tr:hover td{background:rgba(255,255,255,.012)}
 .atc{width:28px;height:26px;border-radius:5px;display:flex;align-items:center;justify-content:center;margin:0 auto;cursor:pointer;font-size:11px;font-weight:700;transition:all .15s;user-select:none}
 .atp{background:rgba(76,175,130,.15);color:var(--green)}.ata{background:rgba(224,92,92,.12);color:var(--red)}
 .atl{background:rgba(224,140,76,.12);color:var(--orange)}.ate{color:var(--b2)}
-.avgc{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:12px;text-align:center}
+.avgc{font-family:var(--ff-mono);font-weight:700;font-size:12px;text-align:center}
 .pbar-w{background:var(--b1);border-radius:4px;height:7px;overflow:hidden}
 .pbar{height:100%;border-radius:4px;transition:width .4s}
 .filters{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;align-items:flex-end}
 .fg2{display:flex;flex-direction:column;gap:4px}
 .fg2 label{font-size:10px;color:var(--t2);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
-.fsel2{padding:7px 10px;background:var(--s1);border:1px solid var(--b2);border-radius:8px;color:var(--t1);font-family:'IBM Plex Sans',sans-serif;font-size:12px;cursor:pointer;outline:none;min-width:110px}
+.fsel2{padding:7px 10px;background:var(--s1);border:1px solid var(--b2);border-radius:8px;color:var(--t1);font-family:var(--ff-sans);font-size:12px;cursor:pointer;outline:none;min-width:110px}
 .fsel2:focus{border-color:var(--gold)}.fsel2 option{background:var(--s2)}
 .search-wrap{position:relative;flex:1;min-width:160px;max-width:280px}
-.search-inp{width:100%;padding:8px 10px 8px 32px;background:var(--s2);border:1px solid var(--b2);border-radius:9px;color:var(--t1);font-family:'IBM Plex Sans',sans-serif;font-size:12px;outline:none;transition:border-color .2s}
+.search-inp{width:100%;padding:8px 10px 8px 32px;background:var(--s2);border:1px solid var(--b2);border-radius:9px;color:var(--t1);font-family:var(--ff-sans);font-size:12px;outline:none;transition:border-color .2s}
 .search-inp:focus{border-color:var(--gold)}
 .search-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--t3);font-size:13px;pointer-events:none}
 .search-drop{position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--s1);border:1px solid var(--b2);border-radius:9px;max-height:200px;overflow-y:auto;z-index:100;display:none;box-shadow:0 8px 24px rgba(0,0,0,.4)}
@@ -152,7 +154,7 @@ tr:hover td{background:rgba(255,255,255,.012)}
 .ghdr{padding:8px 14px;font-weight:700;font-size:11px;color:var(--gold);background:var(--s2);border-bottom:1px solid var(--b1);letter-spacing:.05em;text-transform:uppercase}
 .act-row{display:grid;grid-template-columns:1fr 80px 75px 80px auto;gap:6px;align-items:center;padding:8px 14px;border-bottom:1px solid var(--b1)}
 .act-row:last-child{border-bottom:none}
-.act-in{background:var(--bg);border:1px solid var(--b2);border-radius:7px;color:var(--t1);font-family:'IBM Plex Sans',sans-serif;font-size:12px;padding:6px 9px;outline:none;width:100%}
+.act-in{background:var(--bg);border:1px solid var(--b2);border-radius:7px;color:var(--t1);font-family:var(--ff-sans);font-size:12px;padding:6px 9px;outline:none;width:100%}
 .act-in:focus{border-color:var(--gold)}
 .ag-table{border-collapse:collapse;width:100%}
 .ag-table th{background:var(--s2);padding:8px 10px;font-size:10px;font-weight:700;color:var(--t2);text-transform:uppercase;letter-spacing:.06em;border:1px solid var(--b1);white-space:nowrap;max-width:90px;overflow:hidden;text-overflow:ellipsis}
@@ -161,7 +163,7 @@ tr:hover td{background:rgba(255,255,255,.012)}
 .ag-check{width:16px;height:16px;accent-color:var(--gold);cursor:pointer}
 .sd-row{display:flex;align-items:center;padding:9px 14px;border-bottom:1px solid var(--b1);gap:12px}
 .sd-row:last-child{border-bottom:none}
-.sd-date{font-size:11px;color:var(--t2);min-width:60px;font-family:'IBM Plex Mono',monospace}
+.sd-date{font-size:11px;color:var(--t2);min-width:60px;font-family:var(--ff-mono)}
 .sd-act{flex:1;font-size:12px;font-weight:500}
 .topic-row{display:grid;grid-template-columns:28px 1fr 55px 36px;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid var(--b1)}
 .topic-row:last-child{border-bottom:none}
@@ -184,21 +186,21 @@ tr:hover td{background:rgba(255,255,255,.012)}
 .mov.on{opacity:1;pointer-events:auto}
 .modal{background:var(--s1);border:1px solid var(--b2);border-radius:var(--r2);padding:24px;width:100%;max-width:440px;transform:translateY(18px);transition:transform .22s;margin:auto}
 .mov.on .modal{transform:translateY(0)}
-.mt{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;margin-bottom:14px}
+.mt{font-family:var(--ff-sans);font-size:18px;font-weight:700;margin-bottom:14px}
 .minfo{font-size:12px;color:var(--t2);margin-bottom:14px}
 .score-slider-wrap{margin:16px 0}
-.score-slider-val{font-family:'IBM Plex Mono',monospace;font-size:40px;font-weight:700;text-align:center;color:var(--gold);margin-bottom:12px;transition:color .2s;min-height:50px;display:flex;align-items:center;justify-content:center}
+.score-slider-val{font-family:var(--ff-mono);font-size:40px;font-weight:700;text-align:center;color:var(--gold);margin-bottom:12px;transition:color .2s;min-height:50px;display:flex;align-items:center;justify-content:center}
 .score-slider{width:100%;-webkit-appearance:none;appearance:none;height:10px;border-radius:5px;background:var(--b2);outline:none;cursor:pointer}
 .score-slider::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:var(--gold);cursor:pointer;box-shadow:0 2px 8px rgba(201,168,76,.4)}
 .score-slider::-moz-range-thumb{width:26px;height:26px;border-radius:50%;background:var(--gold);cursor:pointer;border:none}
-.score-ticks{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--t2);margin-top:6px;padding:0 2px}
+.score-ticks{display:flex;justify-content:space-between;font-family:var(--ff-mono);font-size:11px;color:var(--t2);margin-top:6px;padding:0 2px}
 .mact{display:flex;gap:8px;margin-top:16px;justify-content:flex-end}
 .score-extra-btns{display:flex;gap:8px;justify-content:center;margin-top:10px}
-.qb{padding:8px 16px;border:1.5px solid var(--b2);border-radius:8px;background:var(--bg);cursor:pointer;font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:600;color:var(--t2);transition:all .15s}
+.qb{padding:8px 16px;border:1.5px solid var(--b2);border-radius:8px;background:var(--bg);cursor:pointer;font-family:var(--ff-sans);font-size:12px;font-weight:600;color:var(--t2);transition:all .15s}
 .qb:hover,.qb.on{border-color:var(--gold);color:var(--gold);background:var(--gd)}
 .toast{position:fixed;bottom:20px;right:16px;background:var(--s2);border:1px solid var(--b2);border-radius:10px;padding:10px 16px;font-size:12px;box-shadow:0 8px 24px rgba(0,0,0,.4);z-index:500;transform:translateY(20px);opacity:0;transition:all .25s;pointer-events:none}
 .toast.on{transform:translateY(0);opacity:1}.toast.ok{border-left:3px solid var(--green)}.toast.err{border-left:3px solid var(--red)}
-.bbtn{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid var(--b2);background:var(--s2);border-radius:8px;cursor:pointer;font-size:12px;font-weight:500;color:var(--t2);margin-bottom:14px;transition:all .18s;font-family:'IBM Plex Sans',sans-serif}
+.bbtn{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid var(--b2);background:var(--s2);border-radius:8px;cursor:pointer;font-size:12px;font-weight:500;color:var(--t2);margin-bottom:14px;transition:all .18s;font-family:var(--ff-sans)}
 .bbtn:hover{border-color:var(--gold);color:var(--gold)}
 .badge{display:inline-flex;align-items:center;padding:2px 7px;border-radius:8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
 .badge.y{background:rgba(201,168,76,.15);color:var(--gold)}.badge.g{background:rgba(76,175,130,.15);color:var(--green)}
@@ -209,6 +211,11 @@ tr:hover td{background:rgba(255,255,255,.012)}
 .ig label{font-size:12px;color:var(--t2);min-width:130px;flex-shrink:0}.ig .fi{flex:1}
 ::-webkit-scrollbar{width:4px;height:4px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--b2);border-radius:2px}
 input[type=checkbox]{accent-color:var(--gold);width:15px;height:15px;cursor:pointer}
+.card,.scard,.acard,.modal{box-shadow:0 14px 36px rgba(0,0,0,.22)}
+.card:hover,.scard:hover{border-color:var(--b2)}
+.fi,.fsel,.fsel2,.search-inp,.btn,.bgold,.blg,.rbtn,.tab2,.jtab{font-weight:700}
+.pht,.mt,.atitle,.tbname,.aln .uni{letter-spacing:.01em}
+
 </style>
 </head>
 <body>
@@ -286,6 +293,7 @@ input[type=checkbox]{accent-color:var(--gold);width:15px;height:15px;cursor:poin
       <div class="ssec" id="adminNav"><span class="slbl">Администрация</span>
         <div class="ni" id="ni-users" onclick="go('users')"><span class="nico">👤</span>Пользователи</div>
         <div class="ni" id="ni-groups" onclick="go('groups')"><span class="nico">🎓</span>Группы</div>
+        <div class="ni" id="ni-schedule-admin" onclick="go('schedule-admin')"><span class="nico">🗓️</span>Управление расписанием</div>
         <div class="ni" id="ni-access" onclick="go('access')"><span class="nico">🔑</span>Доступ преподавателей</div>
         <div class="ni" id="ni-stats" onclick="go('stats')"><span class="nico">📈</span>Статистика</div>
       </div>
@@ -308,6 +316,27 @@ input[type=checkbox]{accent-color:var(--gold);width:15px;height:15px;cursor:poin
           </div>
         </div>
         <div class="pgb" id="schedBody"></div>
+      </div>
+      <div class="pg" id="pg-schedule-admin">
+        <div class="pgh">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px">
+            <div><div class="pht">Управление расписанием</div><div class="phs">Администратор: создание, редактирование и удаление занятий</div></div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:flex-end">
+              <div class="fg2"><label>День недели</label><select class="fsel2" id="schedAdminDay" onchange="renderScheduleAdmin()"></select></div>
+              <button class="btn g sm" onclick="openSchedEditor()">+ Добавить занятие</button>
+            </div>
+          </div>
+        </div>
+        <div class="pgb">
+          <div class="auto-banner">
+            <div class="auto-icon">🛠️</div>
+            <div>
+              <div class="auto-title">Редактирование доступно только администрации</div>
+              <div class="auto-sub">Преподаватель и студент видят расписание только в режиме просмотра.</div>
+            </div>
+          </div>
+          <div id="schedAdminBody"></div>
+        </div>
       </div>
       <div class="pg" id="pg-myschedule">
         <div class="pgh">
@@ -559,7 +588,7 @@ input[type=checkbox]{accent-color:var(--gold);width:15px;height:15px;cursor:poin
   <div class="modal" style="max-width:500px;max-height:82vh;overflow-y:auto">
     <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
       <div id="pmAv" style="width:52px;height:52px;border-radius:50%;background:var(--gd);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:var(--gold);flex-shrink:0">А</div>
-      <div><div id="pmName" style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700">—</div>
+      <div><div id="pmName" style="font-family:var(--ff-sans);font-size:18px;font-weight:700">—</div>
         <div id="pmGroup" style="font-size:12px;color:var(--t2);margin-top:2px">—</div></div>
     </div>
     <div id="pmSubjs"></div>
@@ -601,6 +630,24 @@ input[type=checkbox]{accent-color:var(--gold);width:15px;height:15px;cursor:poin
     </div>
   </div>
 </div>
+<div class="mov" id="schedEditM">
+  <div class="modal">
+    <div class="mt" id="schedEditTitle">Добавить занятие</div>
+    <div class="minfo" id="schedEditHint">Изменения сразу отображаются в расписании преподавателя и студента.</div>
+    <div class="fg"><label class="fl">День недели</label><select class="fi" id="seDay"></select></div>
+    <div class="fg"><label class="fl">Время</label><input class="fi" id="seTime" type="text" placeholder="12:15–13:45"></div>
+    <div class="fg"><label class="fl">Предмет</label><input class="fi" id="seSubject" type="text" placeholder="Название дисциплины"></div>
+    <div class="fg"><label class="fl">Тип занятия</label>
+      <select class="fi" id="seType"><option>лекция</option><option>пр. зан.</option><option>лаб. раб.</option><option>семинар</option></select>
+    </div>
+    <div class="fg"><label class="fl">Преподаватель</label><input class="fi" id="seTeacher" type="text" placeholder="преп. Иванов И.И."></div>
+    <div class="fg"><label class="fl">Аудитория</label><input class="fi" id="seRoom" type="text" placeholder="4405"></div>
+    <div class="mact">
+      <button class="btn" onclick="closeM('schedEditM')">Отмена</button>
+      <button class="btn g" onclick="saveSchedLesson()">Сохранить</button>
+    </div>
+  </div>
+</div>
 <div class="toast" id="toastEl"></div>
 <script>
 // ════════════════════════════════════════════════
@@ -628,7 +675,7 @@ const STUDENTS = {
 };
 const DATES_2026={1:['08','15','22','29'],2:['05','12','19','26'],3:['05','12','19','26'],4:['02','09','16','23']};
 const MON_NAMES={1:'янв',2:'фев',3:'мар',4:'апр'};
-const SCHEDULE=[
+let SCHEDULE=[
   {day:0,dn:'ПН',lessons:[
     {t:'12:15–13:45',s:'Безопасность жизнедеятельности',ty:'лекция',tc:'ст.пр. Архипов М.В.',r:'4405'},
     {t:'14:00–15:30',s:'Тактико-специальная подготовка',ty:'лекция',tc:'ст.преп. Никоряк В.В.',r:'2111'},
@@ -741,7 +788,7 @@ seedData();
 // ════════════════════════════════════════════════
 // AUTH
 // ════════════════════════════════════════════════
-let CU=null,regRole='teacher',schedOff=0,mySchedOff=0,jMonthTab='att',curGroup=null,scoreCtx=null,uFilter='all';
+let CU=null,regRole='teacher',schedOff=0,mySchedOff=0,jMonthTab='att',curGroup=null,scoreCtx=null,uFilter='all',scheduleEditCtx={day:0,index:null};
 
 function authTab(t){
   document.querySelectorAll('.tab2').forEach((b,i)=>b.classList.toggle('on',(t==='login'&&i===0)||(t==='reg'&&i===1)));
@@ -819,11 +866,15 @@ function setupUI(){
   rp.textContent={teacher:'Преп.',student:'Студент',admin:'Админ',parent:'Родитель'}[r];
   rp.className='rpill '+{teacher:'rt',student:'rs',admin:'ra',parent:'rp'}[r];
   const show=(id,v)=>{const el=document.getElementById(id);if(el)el.style.display=v?'':'none';};
-  show('ni-schedule',r==='teacher');show('ni-journal',r==='teacher');
-  show('ni-grading',r==='teacher');show('ni-materials',r==='teacher');
+  show('ni-schedule',r==='teacher');
+  show('ni-journal',r==='teacher');
+  show('ni-grading',r==='teacher');
+  show('ni-materials',r==='teacher');
   show('ni-students',r==='teacher');
-  show('ni-mygrades',r==='student');show('ni-myschedule',r==='student');
+  show('ni-mygrades',r==='student');
+  show('ni-myschedule',r==='student');
   show('ni-children',r==='parent');
+  show('ni-schedule-admin',r==='admin');
   document.getElementById('adminNav').style.display=r==='admin'?'':'none';
   if(r==='teacher'){
     const allowed=Array.from(teacherAccess[CU.email]||new Set());
@@ -851,7 +902,7 @@ function go(id){
     grading:renderGC,materials:renderMat,students:renderStudents,
     mygrades:renderMyGrades,myschedule:()=>renderMySched(mySchedOff),
     children:renderChildren,users:renderUsers,groups:renderGroups,
-    access:renderAccess,stats:renderStats}[id]||(_=>_))();
+    'schedule-admin':renderScheduleAdmin,access:renderAccess,stats:renderStats}[id]||(_=>_))();
 }
 function togSB(){document.getElementById('SB').classList.toggle('open');document.getElementById('sovl').classList.toggle('open');}
 function closeSB(){document.getElementById('SB').classList.remove('open');document.getElementById('sovl').classList.remove('open');}
@@ -935,11 +986,11 @@ function setupDash(){
       extra=`<div class="card"><div class="card-h"><span class="card-t">📅 Занятия сегодня</span></div>`;
       ts.lessons.forEach(l=>{
         extra+=`<div style="display:grid;grid-template-columns:90px 1fr;border-bottom:1px solid var(--b1)">
-          <div style="padding:12px 10px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--gold);border-right:1px solid var(--b1);background:var(--gd2);display:flex;align-items:center;justify-content:center">${l.t}</div>
+          <div style="padding:12px 10px;text-align:center;font-family:var(--ff-mono);font-size:11px;color:var(--gold);border-right:1px solid var(--b1);background:var(--gd2);display:flex;align-items:center;justify-content:center">${l.t}</div>
           <div style="padding:12px 16px"><div style="font-size:13px;font-weight:600">${l.s}</div>
             <div style="font-size:10px;color:var(--t2);margin:3px 0"><span class="badge ${l.ty==='лекция'?'b':'g'}">${l.ty}</span></div>
             <div style="display:flex;gap:12px;flex-wrap:wrap"><span style="font-size:11px;color:var(--t2)">${l.tc}</span>
-            <span style="font-size:11px;font-family:'IBM Plex Mono',monospace;color:var(--gold)">ауд.${l.r}</span></div>
+            <span style="font-size:11px;font-family:var(--ff-mono);color:var(--gold)">ауд.${l.r}</span></div>
           </div></div>`;
       });
       extra+='</div>';
@@ -1001,13 +1052,13 @@ function buildSchedHTML(off,lbl){
       </div>`;
     sd.lessons.forEach(l=>{
       h+=`<div style="display:grid;grid-template-columns:90px 1fr;border-top:1px solid var(--b1)${isT?';background:rgba(201,168,76,.02)':''}">
-        <div style="padding:12px 10px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:${isT?'var(--gold)':'var(--t2)'};border-right:1px solid var(--b1);background:var(--gd2);display:flex;align-items:center;justify-content:center">${l.t}</div>
+        <div style="padding:12px 10px;text-align:center;font-family:var(--ff-mono);font-size:11px;color:${isT?'var(--gold)':'var(--t2)'};border-right:1px solid var(--b1);background:var(--gd2);display:flex;align-items:center;justify-content:center">${l.t}</div>
         <div style="padding:12px 16px">
           <div style="font-size:13px;font-weight:600;margin-bottom:4px">${l.s}</div>
           <div style="margin-bottom:5px"><span class="badge ${l.ty==='лекция'?'b':'g'}">${l.ty}</span></div>
           <div style="display:flex;gap:12px;flex-wrap:wrap">
             <span style="font-size:11px;color:var(--t2)">👨‍🏫 ${l.tc}</span>
-            <span style="font-size:11px;font-family:'IBM Plex Mono',monospace;color:var(--gold)">🚪 ауд.${l.r}</span>
+            <span style="font-size:11px;font-family:var(--ff-mono);color:var(--gold)">🚪 ауд.${l.r}</span>
           </div>
         </div>
       </div>`;
@@ -1020,6 +1071,135 @@ function schedNav(d){if(d===0)schedOff=0;else schedOff+=d;renderSched(schedOff);
 function renderSched(off){document.getElementById('schedBody').innerHTML=buildSchedHTML(off,'schedLbl');}
 function mySchedNav(d){if(d===0)mySchedOff=0;else mySchedOff+=d;renderMySched(mySchedOff);}
 function renderMySched(off){document.getElementById('mySchedBody').innerHTML=buildSchedHTML(off,'mySchedLbl');}
+
+const WEEK_DAYS=['ПН','ВТ','СР','ЧТ','ПТ','СБ'];
+
+function ensureSchedDay(day){
+  let slot=SCHEDULE.find(x=>x.day===day);
+  if(!slot){
+    slot={day,dn:WEEK_DAYS[day],lessons:[]};
+    SCHEDULE.push(slot);
+    SCHEDULE.sort((a,b)=>a.day-b.day);
+  }
+  return slot;
+}
+function lessonTimeToNum(t){return Number((t||'').split('–')[0].replace(':',''))||0;}
+function fillScheduleDayOptions(){
+  ['schedAdminDay','seDay'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(!el||el.dataset.ready==='1')return;
+    el.innerHTML='';
+    WEEK_DAYS.forEach((dn,i)=>{
+      const o=document.createElement('option');
+      o.value=i;
+      o.textContent=dn;
+      el.appendChild(o);
+    });
+    el.dataset.ready='1';
+  });
+}
+function syncScheduleViews(){
+  if(document.getElementById('schedBody'))renderSched(schedOff);
+  if(document.getElementById('mySchedBody'))renderMySched(mySchedOff);
+  if(document.getElementById('schedAdminBody'))renderScheduleAdmin();
+}
+function renderScheduleAdmin(){
+  fillScheduleDayOptions();
+  const daySel=document.getElementById('schedAdminDay');
+  if(!daySel)return;
+  const day=Number(daySel.value||0);
+  const slot=ensureSchedDay(day);
+  slot.lessons.sort((a,b)=>lessonTimeToNum(a.t)-lessonTimeToNum(b.t));
+  const total=SCHEDULE.reduce((acc,item)=>acc+item.lessons.length,0);
+  let h=`<div class="stats" style="margin-bottom:14px">
+    <div class="scard"><div class="sl">День недели</div><div class="sv">${slot.dn}</div><div class="sd">редактируемый день</div></div>
+    <div class="scard"><div class="sl">Занятий за день</div><div class="sv">${slot.lessons.length}</div><div class="sd">активных пар</div></div>
+    <div class="scard"><div class="sl">Всего в неделе</div><div class="sv">${total}</div><div class="sd">в расписании</div></div>
+    <div class="scard"><div class="sl">Роль</div><div class="sv">ADMIN</div><div class="sd">полный доступ</div></div>
+  </div>
+  <div class="card"><div class="card-h">
+    <span class="card-t">Занятия на ${slot.dn}</span>
+    <button class="btn sm g" onclick="openSchedEditor(${day})">+ Добавить занятие</button>
+  </div>`;
+  if(!slot.lessons.length){
+    h+=`<div class="empty">На выбранный день занятий пока нет. Добавьте первую запись.</div>`;
+  }else{
+    slot.lessons.forEach((l,i)=>{
+      h+=`<div class="grow" style="cursor:default;align-items:flex-start">
+        <div class="grow-av">📘</div>
+        <div style="flex:1;min-width:0">
+          <div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap">
+            <div class="grow-name">${l.s}</div>
+            <div style="font-family:var(--ff-mono);font-size:12px;color:var(--gold)">${l.t}</div>
+          </div>
+          <div style="margin-top:6px;display:flex;gap:8px;flex-wrap:wrap">
+            <span class="badge ${l.ty==='лекция'?'b':'g'}">${l.ty}</span>
+            <span style="font-size:11px;color:var(--t2)">👨‍🏫 ${l.tc}</span>
+            <span style="font-size:11px;color:var(--gold)">🚪 ауд. ${l.r}</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:6px;flex-shrink:0">
+          <button class="btn xs" onclick="openSchedEditor(${day},${i})">✏️</button>
+          <button class="btn xs r" onclick="removeSchedLesson(${day},${i})">🗑️</button>
+        </div>
+      </div>`;
+    });
+  }
+  document.getElementById('schedAdminBody').innerHTML=h+'</div>';
+}
+function openSchedEditor(day=null,index=null){
+  fillScheduleDayOptions();
+  const currentDay=day===null?Number(document.getElementById('schedAdminDay')?.value||0):day;
+  const slot=ensureSchedDay(currentDay);
+  const lesson=index===null?null:slot.lessons[index];
+  scheduleEditCtx={day:currentDay,index:index};
+  document.getElementById('seDay').value=String(currentDay);
+  document.getElementById('seTime').value=lesson?.t||'';
+  document.getElementById('seSubject').value=lesson?.s||'';
+  document.getElementById('seType').value=lesson?.ty||'лекция';
+  document.getElementById('seTeacher').value=lesson?.tc||'';
+  document.getElementById('seRoom').value=lesson?.r||'';
+  document.getElementById('schedEditTitle').textContent=index===null?'Добавить занятие':'Редактировать занятие';
+  openM('schedEditM');
+}
+function saveSchedLesson(){
+  const day=Number(document.getElementById('seDay').value);
+  const t=document.getElementById('seTime').value.trim();
+  const s=document.getElementById('seSubject').value.trim();
+  const ty=document.getElementById('seType').value;
+  const tc=document.getElementById('seTeacher').value.trim();
+  const r=document.getElementById('seRoom').value.trim();
+  if(!t||!s||!tc||!r){
+    showToast('Заполните все поля занятия','err');
+    return;
+  }
+  const lesson={t,s,ty,tc,r};
+  if(scheduleEditCtx.index!==null&&scheduleEditCtx.day===day){
+    ensureSchedDay(day).lessons[scheduleEditCtx.index]=lesson;
+  }else{
+    if(scheduleEditCtx.index!==null){
+      const oldSlot=ensureSchedDay(scheduleEditCtx.day);
+      oldSlot.lessons.splice(scheduleEditCtx.index,1);
+    }
+    ensureSchedDay(day).lessons.push(lesson);
+  }
+  SCHEDULE.forEach(slot=>slot.lessons.sort((a,b)=>lessonTimeToNum(a.t)-lessonTimeToNum(b.t)));
+  scheduleEditCtx={day:day,index:null};
+  closeM('schedEditM');
+  document.getElementById('schedAdminDay').value=String(day);
+  syncScheduleViews();
+  showToast('Расписание обновлено','ok');
+}
+function removeSchedLesson(day,index){
+  const slot=ensureSchedDay(day);
+  if(!slot.lessons[index])return;
+  const title=slot.lessons[index].s;
+  if(!confirm(`Удалить занятие «${title}»?`))return;
+  slot.lessons.splice(index,1);
+  scheduleEditCtx={day:day,index:null};
+  syncScheduleViews();
+  showToast('Занятие удалено','ok');
+}
 
 // ════════════════════════════════════════════════
 // JOURNAL TABS
@@ -1073,7 +1253,7 @@ function renderJAtt(g,sn,mon){
     h+=`<td style="text-align:center;font-weight:700;color:var(--green)">${p}</td>`;
     h+=`<td style="text-align:center;font-weight:700;color:var(--red)">${a}</td>`;
     h+=`<td style="text-align:center;font-weight:700;color:var(--orange)">${l}</td>`;
-    h+=`<td style="text-align:center;font-family:'IBM Plex Mono',monospace;font-weight:700;color:${c}">${pct}%</td></tr>`;
+    h+=`<td style="text-align:center;font-family:var(--ff-mono);font-weight:700;color:${c}">${pct}%</td></tr>`;
   });
   h+='</tbody></table></div></div>';
   document.getElementById('jPaneAtt').innerHTML=h;
@@ -1116,8 +1296,8 @@ function renderJGrades(g,sn,mon){
     const grade=getGrade(pct,sn);
     const att=attPct(g,sn,st);
     const admit=att>=50&&pct!==null&&pct*100>=cfg.g3;
-    h+=`<td style="text-align:center;font-family:'IBM Plex Mono',monospace;font-weight:700;color:${avgColor(pct)}">${sum}</td>`;
-    h+=`<td style="text-align:center;font-family:'IBM Plex Mono',monospace;font-weight:700;color:${avgColor(pct)}">${pct!==null?Math.round(pct*100)+'%':'—'}</td>`;
+    h+=`<td style="text-align:center;font-family:var(--ff-mono);font-weight:700;color:${avgColor(pct)}">${sum}</td>`;
+    h+=`<td style="text-align:center;font-family:var(--ff-mono);font-weight:700;color:${avgColor(pct)}">${pct!==null?Math.round(pct*100)+'%':'—'}</td>`;
     h+=`<td style="text-align:center;font-size:16px;font-weight:700;color:${gradeColor(grade)}">${grade}</td>`;
     h+=`<td style="text-align:center"><span class="badge ${admit?'g':'r'}">${admit?'Да':'Нет'}</span></td></tr>`;
   });
@@ -1147,10 +1327,10 @@ function renderJTopics(sn){
   topics.forEach((t,i)=>{
     const tc={лекция:'b',практика:'g',контроль:'y'}[t.ty]||'p';
     h+=`<div class="topic-row">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--t3)">${i+1}</div>
+      <div style="font-family:var(--ff-mono);font-size:12px;color:var(--t3)">${i+1}</div>
       <div><div style="font-size:13px;font-weight:500">${t.n}</div>
         <div style="margin-top:3px"><span class="badge ${tc}">${t.ty}</span></div></div>
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--gold);text-align:center">${t.hrs} ч.</div>
+      <div style="font-family:var(--ff-mono);font-size:11px;color:var(--gold);text-align:center">${t.hrs} ч.</div>
       <div><button class="btn xs" onclick="showToast('Тема открыта','ok')">✏️</button></div>
     </div>`;
   });
@@ -1316,10 +1496,10 @@ function renderStudents(){
       const admit=att>=50&&pct*100>=cfg.g3;
       h+=`<tr class="strow" onclick="openProfile('${st}','${g}','${sn}')">
         <td><span class="snum">${i+1}.</span><span class="sn">${st}</span></td>
-        <td style="font-family:'IBM Plex Mono',monospace;font-weight:700;color:${avgColor(pct)}">${total}</td>
-        <td style="font-family:'IBM Plex Mono',monospace;font-weight:700;color:${avgColor(pct)}">${Math.round(pct*100)}%</td>
+        <td style="font-family:var(--ff-mono);font-weight:700;color:${avgColor(pct)}">${total}</td>
+        <td style="font-family:var(--ff-mono);font-weight:700;color:${avgColor(pct)}">${Math.round(pct*100)}%</td>
         <td style="text-align:center;font-size:16px;font-weight:700;color:${gradeColor(grade)}">${grade}</td>
-        <td style="font-family:'IBM Plex Mono',monospace;color:${att>=80?'var(--green)':att>=60?'#e0b04c':'var(--red)'}">${att}%</td>
+        <td style="font-family:var(--ff-mono);color:${att>=80?'var(--green)':att>=60?'#e0b04c':'var(--red)'}">${att}%</td>
         <td style="text-align:center;color:${ac.a>3?'var(--red)':'var(--t2)'}">${ac.a}</td>
         <td><span class="badge ${admit?'g':'r'}">${admit?'Да':'Нет'}</span></td>
       </tr>`;
@@ -1354,7 +1534,7 @@ function openProfile(st,g,sn){
     const ap=act.max*act.cnt>0?tot/(act.max*act.cnt):0;
     h+=`<div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--b1)">
       <div style="flex:1;font-size:12px">${act.n}</div>
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:${avgColor(ap)}">${tot.toFixed(1)}</div>
+      <div style="font-family:var(--ff-mono);font-size:12px;font-weight:600;color:${avgColor(ap)}">${tot.toFixed(1)}</div>
       <div style="font-size:10px;color:var(--t3)">/ ${act.max*act.cnt}</div>
     </div>`;
   });
@@ -1389,7 +1569,7 @@ function renderMyGrades(){
           <div style="flex:1;padding-right:12px"><div style="font-size:14px;font-weight:600">${sn}</div>
             <div style="font-size:11px;color:var(--t2);margin-top:3px">Набрано: ${total} б. · Посещаемость: ${att}%</div></div>
           <div style="text-align:right;flex-shrink:0">
-            <div style="font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:700;color:${gradeColor(grade)}">${grade}</div>
+            <div style="font-family:var(--ff-mono);font-size:24px;font-weight:700;color:${gradeColor(grade)}">${grade}</div>
             <div style="font-size:11px;color:var(--t2)">${Math.round(pct*100)}%</div>
           </div>
         </div>
@@ -1445,7 +1625,7 @@ function openSubjDetail(sn,g,st){
         <div class="sd-date">${d}.${MON_NAMES[mon]}</div>
         <div><div class="sd-act">${monName}, занятие</div>
           <div style="font-size:10px;color:var(--t2)">${v==='Н'?'Отсутствовал':v==='0'?'Не выполнено':'Оценено'}</div></div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:14px;color:${v==='Н'?'var(--red)':avgColor(vc)}">${v}</div>
+        <div style="font-family:var(--ff-mono);font-weight:700;font-size:14px;color:${v==='Н'?'var(--red)':avgColor(vc)}">${v}</div>
         <div style="font-size:10px;color:var(--t3)">/ 5</div>
       </div>`;
     });
@@ -1505,7 +1685,7 @@ function openChildDetail(sn,g,st){
       rows+=`<div class="sd-row">
         <div class="sd-date">Зан. ${i+1}</div>
         <div class="sd-act">${act.n}</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:14px;color:${avgColor(vc)}">${v}</div>
+        <div style="font-family:var(--ff-mono);font-weight:700;font-size:14px;color:${avgColor(vc)}">${v}</div>
         <div style="font-size:10px;color:var(--t3)">/ ${act.max}</div>
       </div>`;
     }
@@ -1644,10 +1824,10 @@ function renderGD(){
     const grade=getGrade(pct,sn);const att=attPct(g,sn,st);
     h+=`<tr class="strow" onclick="openProfile('${st}','${g}','${sn}')">
       <td><span class="snum">${i+1}.</span><span class="sn">${st}</span></td>
-      <td style="font-family:'IBM Plex Mono',monospace;font-weight:700;color:${avgColor(pct)}">${total}</td>
-      <td style="font-family:'IBM Plex Mono',monospace;font-weight:700;color:${avgColor(pct)}">${Math.round(pct*100)}%</td>
+      <td style="font-family:var(--ff-mono);font-weight:700;color:${avgColor(pct)}">${total}</td>
+      <td style="font-family:var(--ff-mono);font-weight:700;color:${avgColor(pct)}">${Math.round(pct*100)}%</td>
       <td style="text-align:center;font-size:16px;font-weight:700;color:${gradeColor(grade)}">${grade}</td>
-      <td style="font-family:'IBM Plex Mono',monospace;color:${att>=80?'var(--green)':att>=60?'#e0b04c':'var(--red)'}">${att}%</td>
+      <td style="font-family:var(--ff-mono);color:${att>=80?'var(--green)':att>=60?'#e0b04c':'var(--red)'}">${att}%</td>
       <td style="min-width:80px"><div class="pbar-w"><div class="pbar" style="width:${Math.round(pct*100)}%;background:${avgColor(pct)}"></div></div></td>
     </tr>`;
   });
@@ -1742,7 +1922,7 @@ function renderStats(){
       <div style="font-size:11px;color:var(--t2);min-width:80px">${x.g}</div>
       <div style="flex:1"><div style="font-size:10px;color:var(--t2);margin-bottom:3px">${x.sn.slice(0,30)}</div>
         <div class="absent-bar"><div class="absent-fill" style="width:${x.pct}%"></div></div></div>
-      <div style="font-family:'IBM Plex Mono',monospace;font-weight:700;color:var(--red);min-width:40px;text-align:right">${x.pct}%</div>
+      <div style="font-family:var(--ff-mono);font-weight:700;color:var(--red);min-width:40px;text-align:right">${x.pct}%</div>
       <div style="font-size:11px;color:var(--t2);min-width:60px;text-align:right">${x.missed} пропусков</div>
     </div>`).join('')
     :'<div class="empty">Нет студентов с посещаемостью менее 60%</div>';
@@ -1753,8 +1933,8 @@ function exportXLS(){showToast('Экспорт в Excel: посещаемост�
 // MODALS
 // ════════════════════════════════════════════════
 function openM(id){document.getElementById(id).classList.add('on');}
-function closeM(id){document.getElementById(id).classList.remove('on');if(id==='scoreM')scoreCtx=null;}
-['scoreM','profM','addUserM','uploadM'].forEach(id=>{
+function closeM(id){document.getElementById(id).classList.remove('on');if(id==='scoreM')scoreCtx=null;if(id==='schedEditM')scheduleEditCtx={day:Number(document.getElementById('schedAdminDay')?.value||0),index:null};}
+['scoreM','profM','addUserM','uploadM','schedEditM'].forEach(id=>{
   const el=document.getElementById(id);
   if(el)el.addEventListener('click',function(e){if(e.target===this)closeM(id);});
 });
